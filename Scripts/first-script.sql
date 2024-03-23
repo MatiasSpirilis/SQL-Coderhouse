@@ -87,6 +87,7 @@ INSERT INTO employees (first_name, last_name, email, job_id, salary, department_
 INSERT INTO employees (first_name, last_name, email, job_id, salary, department_id) VALUES ('Lucas', 'Fernández', 'lucasfernandez@example.com', 5, 48000, 5);
 INSERT INTO employees (first_name, last_name, email, job_id, salary, department_id) VALUES ('Camila', 'Gonzalez', 'gcz@example.com', NULL, 0, 5);
 
+/*
 SELECT * FROM employees e
 INNER JOIN jobs j	
 ON e.job_id = j.job_id
@@ -104,3 +105,4 @@ ON d.location_id = l.location_id
 INNER JOIN countries c
 ON l.country_id = c.country_id 
 WHERE c.country_name = 'Argentina' OR c.country_name = 'Chile'
+*/
