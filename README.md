@@ -1,5 +1,3 @@
-**Markdown:**
-
 # Documentación del Modelo de Base de Datos
 
 ## Descripción del Modelo
