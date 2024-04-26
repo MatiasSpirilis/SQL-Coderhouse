@@ -158,28 +158,6 @@ WHERE employee_id > 0;
 SELECT first_name, last_name, salary
 FROM employees;
 
-
-
-/*
-SELECT * FROM employees e
-INNER JOIN jobs j	
-ON e.job_id = j.job_id
-ORDER BY e.salary DESC
-
-SELECT * FROM employees e
-LEFT JOIN jobs j	
-ON e.job_id = j.job_id
-
-SELECT e.first_name, e.last_name, e.email, c.country_name FROM employees e
-INNER JOIN departments d
-ON e.department_id = d.department_id
-INNER JOIN location l
-ON d.location_id = l.location_id
-INNER JOIN countries c
-ON l.country_id = c.country_id 
-WHERE c.country_name = 'Argentina' OR c.country_name = 'Chile'
-*/
-
 -- Creo una vista que muestra los empleados que cobran mas de 50k --
 
 CREATE OR REPLACE VIEW vista_empleados AS
