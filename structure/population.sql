@@ -71,3 +71,13 @@ INSERT INTO employees (first_name, last_name, email, job_id, salary, department_
 INSERT INTO employees (first_name, last_name, email, job_id, salary, department_id) VALUES ('Alejandro', 'Castro', 'alejandrocastro@example.com', 10, 48000, 10);
 INSERT INTO employees (first_name, last_name, email, job_id, salary, department_id) VALUES ('Clara', 'Morales', 'claramorales@example.com', 2, 60000, 2);
 INSERT INTO employees (first_name, last_name, email, job_id, salary, department_id) VALUES ('Juan Pablo', 'López', 'juanpablolopez@example.com', 7, 60000, 7);
+
+
+-- Modifico con UPDATE para que todos tengan salary unicos -- 
+
+UPDATE employees
+SET salary = FLOOR(50000 + RAND() * 50000)
+WHERE employee_id > 0;
+
+SELECT first_name, last_name, salary
+FROM employees;
