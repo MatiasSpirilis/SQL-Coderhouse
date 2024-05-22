@@ -1,3 +1,4 @@
+DROP DATABASE IF EXISTS coderhouse_hr;
 CREATE DATABASE coderhouse_hr ;
 
 USE coderhouse_hr ;
@@ -71,7 +72,7 @@ ADD FOREIGN KEY (department_id) REFERENCES departments(department_id);
 
 
 -- Inserto info en las tablas --
-
+USE coderhouse_hr;
 INSERT INTO countries (country_name) VALUES ('Argentina');
 INSERT INTO countries (country_name) VALUES ('Brazil');
 INSERT INTO countries (country_name) VALUES ('Chile');
@@ -159,7 +160,7 @@ SELECT first_name, last_name, salary
 FROM employees;
 
 -- Creo una vista que muestra los empleados que cobran mas de 50k --
-
+USE coderhouse_hr;
 CREATE OR REPLACE VIEW vista_empleados AS
 SELECT first_name, last_name
 FROM employees
