@@ -1,3 +1,5 @@
+USE coderhouse_hr;
+
 -- Creo tabla de employee_audit que servira para implementar un trigger -- 
 
 CREATE TABLE employee_audit (

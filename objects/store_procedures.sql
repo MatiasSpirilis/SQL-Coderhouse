@@ -1,3 +1,5 @@
+USE coderhouse_hr;
+
 -- SP para ver la cantidad de empleados por trabajo --
 
 DELIMITER //

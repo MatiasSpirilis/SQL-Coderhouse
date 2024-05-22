@@ -1,3 +1,5 @@
+USE coderhouse_hr;
+
 -- Function para calcular salario promedio por pais --
 
 DELIMITER //
