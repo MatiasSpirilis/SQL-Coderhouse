@@ -183,6 +183,15 @@ Estas relaciones garantizan que los datos estén correctamente estructurados y r
 ### vista_empleados_dos
 - Muestra los empleados que cobran menos de $75,000 en Argentina, Brasil, Uruguay y Paraguay.
 
+### vista_empleados_departamento_pais
+- Visualiza la lista de empleados agrupados por departamento y país.
+
+### vista_empleados_antiguedad
+- Muestra en orden los empleados que tienen más de 10 años en la empresa.
+
+### vista_empleados_rangos_salarios
+- Muestra los empleados agrupados por rangos de salarios, ordenados por rango salarial descendente.
+
 ## Procedimientos almacenados (Stored Procedures)
 
 ### employee_by_job
@@ -203,4 +212,23 @@ Estas relaciones garantizan que los datos estén correctamente estructurados y r
 
 ### trg_insert_employee_audit
 - Registra datos en la tabla de auditoría cuando se inserta un nuevo empleado en la tabla `employees`.
+
+## Roles
+
+- 'web_admin'
+- 'web_reader'
+- 'web_writer'
+
+## Permisos
+
+- `web_admin`: Todos los permisos en la base de datos `web_db`.
+- `web_reader`: Permisos de SELECT en la base de datos `web_db`.
+- `web_writer`: Permisos de INSERT, UPDATE y DELETE en la base de datos `web_db`.
+
+## Usuarios y Asignación de Roles
+
+- `admin_user`@`localhost` con contraseña `admin_pass`: Asignado el rol `web_admin`.
+- `reader_user1`@`localhost` con contraseña `reader1_pass`: Asignado el rol `web_reader`.
+- `reader_user2`@`localhost` con contraseña `reader2_pass`: Asignado el rol `web_reader`.
+- `writer_user1`@`localhost` con contraseña `writer1_pass`: Asignado el rol `web_writer`.
 
