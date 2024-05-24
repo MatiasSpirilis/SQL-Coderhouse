@@ -202,8 +202,7 @@ FROM employees
 WHERE DATEDIFF(CURDATE(), hire_date) > 3650
 ORDER BY hire_date DESC;
 
-SELECT *
-FROM vista_empleados_antiguedad;
+SELECT * FROM vista_empleados_antiguedad;
 
 -- Quinta vista; muestra los empleados agrupados por rangos de salarios, ordenados por rango salarial descendente. --
 
@@ -226,8 +225,7 @@ SELECT first_name, last_name, salary,
 FROM employees
 ORDER BY orden_rango DESC;
 
-SELECT *
-FROM vista_empleados_rangos_salarios;
+SELECT * FROM vista_empleados_rangos_salarios;
 
 -- SP para ver la cantidad de empleados por trabajo --
 
@@ -362,21 +360,28 @@ CREATE ROLE 'web_writer';
 
 -- Asigno permisos a los roles
 
-GRANT ALL ON web_db.* TO 'web_admin';
-GRANT SELECT ON web_db.* TO 'web_reader';
-GRANT INSERT, UPDATE, DELETE ON web_db.* TO 'web_writer';
+GRANT ALL ON coderhouse_hr.* TO 'web_admin';
+GRANT SELECT ON coderhouse_hr.* TO 'web_reader';
+GRANT INSERT, UPDATE, DELETE ON coderhouse_hr.* TO 'web_writer';
 
 -- Creo usuarios y asigno roles
 
-CREATE USER 'admin_user'@'localhost' IDENTIFIED BY 'admin_pass';
-CREATE USER 'reader_user1'@'localhost' IDENTIFIED BY 'reader1_pass';
-CREATE USER 'reader_user2'@'localhost' IDENTIFIED BY 'reader2_pass';
-CREATE USER 'writer_user1'@'localhost' IDENTIFIED BY 'writer1_pass';
+CREATE USER 'admin_user'@'%' IDENTIFIED BY 'admin_pass';
+CREATE USER 'reader_user1'@'%' IDENTIFIED BY 'reader1_pass';
+CREATE USER 'reader_user2'@'%' IDENTIFIED BY 'reader2_pass';
+CREATE USER 'writer_user1'@'%' IDENTIFIED BY 'writer1_pass';
 
-GRANT 'app_developer' TO 'dev1'@'localhost';
-GRANT 'app_read' TO 'read_user1'@'localhost';
-GRANT 'app_read' TO 'read_user2'@'localhost';
-GRANT 'app_write' TO 'rw_user1'@'localhost';
+GRANT 'web_admin' TO 'admin_user'@'%';
+GRANT 'web_reader' TO 'reader_user1'@'%';
+GRANT 'web_reader' TO 'reader_user2'@'%';
+GRANT 'web_writer' TO 'writer_user1'@'%';
+
+GRANT ALL ON coderhouse_hr.* TO 'admin_user'@'%';
+GRANT SELECT ON coderhouse_hr.* TO 'reader_user1'@'%';
+GRANT SELECT ON coderhouse_hr.* TO 'reader_user2'@'%';
+GRANT INSERT, UPDATE, DELETE ON coderhouse_hr.* TO 'writer_user1';
+FLUSH PRIVILEGES;
+
 
 
 
