@@ -182,6 +182,33 @@ SELECT *
 FROM vista_empleados_dos;
 
 
+-- Creo tercera vista donde podemos visualizar la lista de empleados agrupados por departamento y pais.
+
+CREATE OR REPLACE VIEW vista_empleados_departamento_pais AS
+SELECT e.first_name, e.last_name, d.department_name, c.country_name
+FROM employees e
+JOIN departments d ON e.department_id = d.department_id
+JOIN location l ON d.location_id = l.location_id
+JOIN countries c ON l.country_id = c.country_id;
+
+SELECT * FROM vista_empleados_departamento_pais
+
+-- Cuarta vista, donde vemos en orden los empleados que tienen mas de 10 años en la empresa.
+
+CREATE OR REPLACE VIEW vista_empleados_antiguedad AS
+SELECT first_name, last_name, hire_date
+FROM employees
+WHERE DATEDIFF(CURDATE(), hire_date) > 3650
+ORDER BY hire_date DESC;
+
+SELECT *
+FROM vista_empleados_antiguedad;
+
+
+SELECT *
+FROM vista_empleados_antiguedad;
+
+
 -- SP para ver la cantidad de empleados por trabajo --
 
 DELIMITER //
