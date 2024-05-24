@@ -217,6 +217,12 @@ Estas relaciones garantizan que los datos estén correctamente estructurados y r
 ### trg_insert_employee_audit
 - Registra datos en la tabla de auditoría cuando se inserta un nuevo empleado en la tabla `employees`.
 
+### trg_update_employee_audit
+- Registra datos en la tabla de auditoría cuando se actualiza un nuevo empleado en la tabla `employees`.
+
+### trg_delete_employee_audit
+- Registra datos en la tabla de auditoría cuando se borra un nuevo empleado en la tabla `employees`.
+
 ## Roles
 
 - 'web_admin'
