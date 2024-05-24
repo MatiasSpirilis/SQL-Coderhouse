@@ -341,6 +341,37 @@ END;
 
 DELIMITER ;
 
+-- Creación del trigger que registrará datos en la tabla de auditoría cuando se haga un DELETE en la tabla employees --
+
+DELIMITER //
+
+CREATE TRIGGER trg_delete_employee_audit
+AFTER DELETE ON employees
+FOR EACH ROW
+BEGIN
+    INSERT INTO employee_audit (employee_id, first_name, last_name, email, job_id, salary, department_id, hire_date, operation_date, operation_type)
+    VALUES (OLD.employee_id, OLD.first_name, OLD.last_name, OLD.email, OLD.job_id, OLD.salary, OLD.department_id, OLD.hire_date, NOW(), 'DELETE');
+END;
+//
+
+DELIMITER ;
+
+
+-- Creación del trigger que registrará datos en la tabla de auditoría cuando se haga un UPDATE en la tabla employees --
+
+DELIMITER //
+
+CREATE TRIGGER trg_update_employee_audit
+AFTER UPDATE ON employees
+FOR EACH ROW
+BEGIN
+    INSERT INTO employee_audit (employee_id, first_name, last_name, email, job_id, salary, department_id, hire_date, operation_date, operation_type)
+    VALUES (NEW.employee_id, NEW.first_name, NEW.last_name, NEW.email, NEW.job_id, NEW.salary, NEW.department_id, NEW.hire_date, NOW(), 'UPDATE');
+END;
+//
+
+DELIMITER ;
+
 -- Agrego un employee nuevo --
 
 INSERT INTO employees (first_name, last_name, email, job_id, salary, department_id, hire_date) VALUES ('Juan', 'Pérez', 'juan.perez@example.com', 1, 50000.00, 1, '2024-04-26');
@@ -348,9 +379,6 @@ INSERT INTO employees (first_name, last_name, email, job_id, salary, department_
 -- Chequeo la tabla de auditoria --
 
 SELECT * FROM employee_audit;  -- Aparece Juan Perez, nueva persona agregada a la DB --
-
-SELECT * FROM employees
-
 
 -- Creo roles
 
@@ -381,8 +409,3 @@ GRANT SELECT ON coderhouse_hr.* TO 'reader_user1'@'%';
 GRANT SELECT ON coderhouse_hr.* TO 'reader_user2'@'%';
 GRANT INSERT, UPDATE, DELETE ON coderhouse_hr.* TO 'writer_user1';
 FLUSH PRIVILEGES;
-
-
-
-
-

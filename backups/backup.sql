@@ -90,7 +90,7 @@ CREATE TABLE `employee_audit` (
   PRIMARY KEY (`audit_id`),
   KEY `employee_id` (`employee_id`),
   CONSTRAINT `employee_audit_ibfk_1` FOREIGN KEY (`employee_id`) REFERENCES `employees` (`employee_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -99,7 +99,7 @@ CREATE TABLE `employee_audit` (
 
 LOCK TABLES `employee_audit` WRITE;
 /*!40000 ALTER TABLE `employee_audit` DISABLE KEYS */;
-INSERT INTO `employee_audit` VALUES (1,29,'Juan','Pérez','juan.perez@example.com',1,50000.00,1,'2024-04-26','2024-04-26 19:25:30','INSERT');
+INSERT INTO `employee_audit` VALUES (1,29,'Juan','Pérez','juan.perez@example.com',1,50000.00,1,'2024-04-26','2024-04-26 19:25:30','INSERT'),(2,1,'Pablo','Baldor','chp@example.com',1,87675.00,1,'2014-12-13','2024-05-24 19:50:40','UPDATE');
 /*!40000 ALTER TABLE `employee_audit` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -134,7 +134,7 @@ CREATE TABLE `employees` (
 
 LOCK TABLES `employees` WRITE;
 /*!40000 ALTER TABLE `employees` DISABLE KEYS */;
-INSERT INTO `employees` VALUES (1,'Pablo','Chp','chp@example.com',1,87675.00,1,'2014-12-13'),(2,'Maria','Silva','mariasilva@example.com',2,65138.00,2,'2013-06-30'),(3,'Pedro','García','pedrogarcia@example.com',3,62667.00,3,'2012-08-19'),(4,'Ana','Rodriguez','anarodriguez@example.com',4,67921.00,4,'2012-09-05'),(5,'Lucas','Fernández','lucasfernandez@example.com',5,51604.00,5,'2015-06-29'),(6,'Camila','Gonzalez','gcz@example.com',NULL,54259.00,5,'2014-06-03'),(8,'Juan Pablo','López','juanpablolopez@example.com',7,66481.00,7,'2015-08-18'),(9,'Diego','Sánchez','diegosanchez@example.com',6,69629.00,6,'2024-11-19'),(10,'Valeria','Martinez','valeriamartinez@example.com',7,98703.00,7,'2022-07-15'),(11,'Andrés','López','andreslopez@example.com',8,84629.00,8,'2013-01-13'),(12,'Carolina','Gomez','carolinagomez@example.com',9,77035.00,9,'2017-07-25'),(13,'Juan','Hernández','jhernandez@example.com',10,81288.00,10,'2023-09-17'),(14,'Luis','Perez','lpz@example.com',NULL,75335.00,10,'2010-11-11'),(15,'Federico','López','federicolopez@example.com',2,82811.00,2,'2018-03-05'),(16,'Luisa','Martínez','luisamartinez@example.com',3,88052.00,3,'2018-04-17'),(17,'Gabriel','Fernández','gabrielfernandez@example.com',5,91827.00,5,'2011-12-08'),(18,'Sofía','González','sofiagonzalez@example.com',9,94980.00,9,'2024-10-19'),(19,'Martín','Díaz','martindiaz@example.com',7,99420.00,7,'2018-03-14'),(20,'Valentina','Herrera','valentinaherrera@example.com',10,62160.00,10,'2021-08-05'),(21,'Joaquín','Rojas','joaquinrojas@example.com',6,62540.00,6,'2013-05-15'),(22,'Marina','Alvarez','marinaalvarez@example.com',4,76223.00,4,'2022-01-26'),(23,'Matías','Torres','matiastorres@example.com',8,93493.00,8,'2015-04-01'),(24,'Paula','Sosa','paulasosa@example.com',1,88796.00,1,'2015-01-09'),(25,'Nicolás','Ramírez','nicolasramirez@example.com',3,63502.00,3,'2019-05-18'),(26,'Elena','Luna','elenaluna@example.com',5,51123.00,5,'2011-10-26'),(27,'Alejandro','Castro','alejandrocastro@example.com',10,65110.00,10,'2020-12-14'),(28,'Clara','Morales','claramorales@example.com',2,72183.00,2,'2014-04-26'),(29,'Juan','Pérez','juan.perez@example.com',1,50000.00,1,'2024-04-26');
+INSERT INTO `employees` VALUES (1,'Pablo','Baldor','chp@example.com',1,87675.00,1,'2014-12-13'),(2,'Maria','Silva','mariasilva@example.com',2,65138.00,2,'2013-06-30'),(3,'Pedro','García','pedrogarcia@example.com',3,62667.00,3,'2012-08-19'),(4,'Ana','Rodriguez','anarodriguez@example.com',4,67921.00,4,'2012-09-05'),(5,'Lucas','Fernández','lucasfernandez@example.com',5,51604.00,5,'2015-06-29'),(6,'Camila','Gonzalez','gcz@example.com',NULL,54259.00,5,'2014-06-03'),(8,'Juan Pablo','López','juanpablolopez@example.com',7,66481.00,7,'2015-08-18'),(9,'Diego','Sánchez','diegosanchez@example.com',6,69629.00,6,'2024-11-19'),(10,'Valeria','Martinez','valeriamartinez@example.com',7,98703.00,7,'2022-07-15'),(11,'Andrés','López','andreslopez@example.com',8,84629.00,8,'2013-01-13'),(12,'Carolina','Gomez','carolinagomez@example.com',9,77035.00,9,'2017-07-25'),(13,'Juan','Hernández','jhernandez@example.com',10,81288.00,10,'2023-09-17'),(14,'Luis','Perez','lpz@example.com',NULL,75335.00,10,'2010-11-11'),(15,'Federico','López','federicolopez@example.com',2,82811.00,2,'2018-03-05'),(16,'Luisa','Martínez','luisamartinez@example.com',3,88052.00,3,'2018-04-17'),(17,'Gabriel','Fernández','gabrielfernandez@example.com',5,91827.00,5,'2011-12-08'),(18,'Sofía','González','sofiagonzalez@example.com',9,94980.00,9,'2024-10-19'),(19,'Martín','Díaz','martindiaz@example.com',7,99420.00,7,'2018-03-14'),(20,'Valentina','Herrera','valentinaherrera@example.com',10,62160.00,10,'2021-08-05'),(21,'Joaquín','Rojas','joaquinrojas@example.com',6,62540.00,6,'2013-05-15'),(22,'Marina','Alvarez','marinaalvarez@example.com',4,76223.00,4,'2022-01-26'),(23,'Matías','Torres','matiastorres@example.com',8,93493.00,8,'2015-04-01'),(24,'Paula','Sosa','paulasosa@example.com',1,88796.00,1,'2015-01-09'),(25,'Nicolás','Ramírez','nicolasramirez@example.com',3,63502.00,3,'2019-05-18'),(26,'Elena','Luna','elenaluna@example.com',5,51123.00,5,'2011-10-26'),(27,'Alejandro','Castro','alejandrocastro@example.com',10,65110.00,10,'2020-12-14'),(28,'Clara','Morales','claramorales@example.com',2,72183.00,2,'2014-04-26'),(29,'Juan','Pérez','juan.perez@example.com',1,50000.00,1,'2024-04-26');
 /*!40000 ALTER TABLE `employees` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
@@ -149,6 +149,42 @@ DELIMITER ;;
 /*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `trg_insert_employee_audit` AFTER INSERT ON `employees` FOR EACH ROW BEGIN
     INSERT INTO employee_audit (employee_id, first_name, last_name, email, job_id, salary, department_id, hire_date, operation_date, operation_type)
     VALUES (NEW.employee_id, NEW.first_name, NEW.last_name, NEW.email, NEW.job_id, NEW.salary, NEW.department_id, NEW.hire_date, NOW(), 'INSERT');
+END */;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `trg_update_employee_audit` AFTER UPDATE ON `employees` FOR EACH ROW BEGIN
+    INSERT INTO employee_audit (employee_id, first_name, last_name, email, job_id, salary, department_id, hire_date, operation_date, operation_type)
+    VALUES (NEW.employee_id, NEW.first_name, NEW.last_name, NEW.email, NEW.job_id, NEW.salary, NEW.department_id, NEW.hire_date, NOW(), 'UPDATE');
+END */;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `trg_delete_employee_audit` AFTER DELETE ON `employees` FOR EACH ROW BEGIN
+    INSERT INTO employee_audit (employee_id, first_name, last_name, email, job_id, salary, department_id, hire_date, operation_date, operation_type)
+    VALUES (OLD.employee_id, OLD.first_name, OLD.last_name, OLD.email, OLD.job_id, OLD.salary, OLD.department_id, OLD.hire_date, NOW(), 'DELETE');
 END */;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -495,4 +531,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-05-24 18:30:30
+-- Dump completed on 2024-05-24 19:51:44
