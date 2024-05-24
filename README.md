@@ -113,6 +113,10 @@ Esta tabla almacena detalles sobre los empleados de la empresa.
   - Tipo de dato: INT
   - Longitud: -
   - Descripción: Clave foránea que referencia el ID del departamento en la tabla "departments".
+- **hire_date**
+  - Tipo de dato: DATE
+  - Longitud: -
+  - Descripción: Fecha de contratación del empleado.
 
 ### Tabla **employee_audit**
 Esta tabla registra auditorías de empleados, registrando cambios realizados en la tabla `employees`.
